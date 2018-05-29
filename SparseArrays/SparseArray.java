@@ -3,9 +3,10 @@ import java.math.*;
 import java.util.*;
 
 
-public class SparseArray{
-    public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
+public class SparseArray {
+	public static void main(String[] args) throws Exception {
+
+		Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter number of strings");
         int stringsCount = scanner.nextInt();
