@@ -19,7 +19,7 @@ class SecondElement {
 			array[i] = sc.nextInt();
 		}
 
-		int max = array[0], secMax = array[0], min = array[0], secMin = array[0];
+		int max = array[0], secMax = array[0];
 
 		for (int i = 0; i < n; i++) {
 			if (array[i] > max) {
@@ -28,14 +28,18 @@ class SecondElement {
 			}
 		}
 		
+		int temp;
 		for (int i = 0; i < n; i++) {
-			if (array[i] < min) {
-				secMin = min;
-				min = array[i];
+			for (int j = i+1; j < n; j++) {
+				if (array[i] > array[j]) {
+					temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
 			}
 		}
 
-		System.out.println("Second smallest element is " + secMin);
+		System.out.println("Second smallest element is " + array[1]);
 		System.out.println("Second largest element is " + secMax);
 	}
 }
