@@ -7,8 +7,6 @@ class MaxProfit {
 		System.out.println("Enter length of array");
 		int n = sc.nextInt();
 
-		int profit = 0;
-
 		System.out.println("Enter prices in array ");
 		int[] price = new int[1000];
 
@@ -21,29 +19,18 @@ class MaxProfit {
 			System.out.print(price[i] + " ");
 		}
 
-		System.out.println("");
-		System.out.println("Enter buying day");
-		int buyingDay = sc.nextInt();
-
-		System.out.println("Enter selling day");
-		int sellingDay = sc.nextInt();
-
+		int maxProfit = 0, profit = 0;
 		for (int i = 0; i < n; i++) {
-			if (buyingDay == i) {
-				int c = price[i];
-				for (int j = 0; j < n; j++) {
-					if (sellingDay == j) {
-						profit = price[j] - price[i];
+			for (int j = 0; j < n; j++) {
+				if (price[j] > price[i]) {
+					profit = price[j] - price[i];
+					if (profit > maxProfit) {
+						maxProfit = profit;
 					}
 				}
 			}
 		}
-		if (profit >= 0) {
-			System.out.println("profit is " + profit);
-		}
-		else
-		{
-			System.out.println("Enter valid days");
-		}
+
+		System.out.println("Maximum profit is " + maxProfit);
 	}
 }
