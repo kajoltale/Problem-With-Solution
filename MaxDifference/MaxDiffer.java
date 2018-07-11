@@ -22,17 +22,15 @@ class MaxDiffer {
 
 		System.out.println(" ");
 
-		int small = arr[0];
-		int difference = arr[0] - arr[1];
+		int small = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
 		for (int i = 0; i < n; i++) {
-			if (arr[i]-small > difference) {
-				difference = arr[i] - small;
-			}
 			if (arr[i] < small) {
 				small = arr[i];
 			}
+			if(arr[i] > max) {
+				max = arr[i];
+			}
 		}
-
-		System.out.println("Maximum difference is " + difference);
+		System.out.println("Maximum difference is " + (max - small));
 	}
 }
