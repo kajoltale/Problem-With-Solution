@@ -1,5 +1,5 @@
-import java.util.*;
-
+import java.util.Scanner;
+import java.util.HashMap;
 class NonRepeat {
 	public static void main(String args[]) {
 
@@ -8,22 +8,24 @@ class NonRepeat {
 		System.out.println("Enter a string");
 		String str = sc.nextLine();
 
-		char c, NonRepChar;
-		int count;
+		HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
 
-		for (int i = 0; i < str.length(); i++) {
-			count = 0;
-			c = str.charAt(i);
-			for (int j = 0;j < str.length(); j++) {
-				if (c == str.charAt(j)) {
-					count++;
-				}
-			}
-			if (count == 1) {
-				NonRepChar = str.charAt(i);
-				System.out.println("First non-repeating character is " + NonRepChar);
+		char ch;
+		for ( int i = 0; i < str.length(); i++) {
+			ch = str.charAt(i);
+			if (hm.containsKey(ch)) 
+				hm.put(ch,hm.get(ch) + 1);
+			else 
+				hm.put(ch,1);
+		}
+
+		for ( int i = 0; i < str.length(); i++) {
+			ch = str.charAt(i);
+			if (hm.get(ch) == 1) {
+				System.out.println("First non repeating char is " + ch);
 				break;
 			}
-		}
+
+		} 
 	}
 }
