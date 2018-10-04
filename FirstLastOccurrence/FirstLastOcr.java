@@ -10,7 +10,7 @@ class FirstLastOcr {
 
 		while ( test != 0) {
 
-			int firstOcr = 0, lastOcr = 0;
+			int firstOcr = -1, lastOcr = -1;
 
 			System.out.println("Enter no of elements in array");
 			int n = sc.nextInt();
@@ -32,14 +32,10 @@ class FirstLastOcr {
 
 			for (int i = 0; i < n; i++) {
 				if (x == array[i]) {
-					if (firstOcr == 0) {
+					if (firstOcr == -1) {
 						firstOcr = i;
 					}
 					lastOcr = i;
-				}
-				else {
-					firstOcr = -1;
-					lastOcr = -1;
 				}
 			}
 
