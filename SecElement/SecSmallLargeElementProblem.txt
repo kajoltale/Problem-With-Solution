@@ -1,1 +1,0 @@
-Find the second smallest and second largest element in array.
