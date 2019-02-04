@@ -46,15 +46,13 @@ class MatrixRound {
         		}
         		row--;
 			}
-			i
 			
-
-        	if (col > startCol) {
-        		for (int i = row-1; i >= startRow; i--) {
-        			System.out.print(matrix[i][startCol] + " ");
-        		}
-        		startCol++;
-        	}
+			if (col > startCol) {
+				for (int i = row-1; i >= startRow; i--) {
+					System.out.print(matrix[i][startCol] + " ");
+				}
+				startCol++;
+			}
 		}
 	}
 }
