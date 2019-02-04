@@ -1,4 +1,4 @@
-// Write java program to calculate sum of diagonal, right diagonal and boundary element of an matrix.
+// Write java program to rotate a matrix.
 import java.util.*;
 class RotateMatrix {
 	public static void main(String[] args) {
