@@ -9,7 +9,13 @@ public class HelloWorld{
         String temp = "";
         for (int i = 1; i < str.length(); i = i + 2) {
             temp = temp + str.charAt(i-1) + str.charAt(i);
-            System.out.println("Result is " + checkSum(temp));
+            String result = checkSum(temp);
+            if (result.equals("No Match")) {
+                continue;
+            }
+            else {
+                System.out.println("Result is " + result);
+            }
         }
     }
     
