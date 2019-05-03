@@ -1,0 +1,49 @@
+import java.util.*;
+class Salary{
+	public static void main(String[] args) {
+		
+		int arr[] = {1,2,3};
+		int n = arr.length;
+		int count = 0;
+		int result = incSalary(arr,n, count);
+		System.out.println("Number of count require = " + result);
+
+		
+	}
+
+	public static int incSalary(int arr[], int n, int count) {
+
+		Set<Integer> set = new HashSet<Integer>();
+		for (int i = 0; i < n; i++) {
+			set.add(arr[i]);
+		}
+		if (set.size() == 1) {
+			return count;
+		}
+		else {
+			int maxNumLoc = max(arr, n); 
+			for (int i = 0; i < n; i++) {
+				if (i == maxNumLoc) {
+					continue;
+				}
+				else {
+					arr[i] = arr[i] + 1;
+				}
+			}
+			count++;
+			return incSalary(arr, n, count);
+		}
+	}
+
+	public static int max(int arr[], int n) {
+		int maxNum = 0;
+		int maxNumLoc = 0;
+		for (int i = 0; i < n; i++) {
+			if (arr[i] > maxNum) {
+				maxNum = arr[i];
+				maxNumLoc = i;
+			}
+		}
+		return maxNumLoc;
+	}
+}
