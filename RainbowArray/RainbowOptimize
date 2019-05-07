@@ -9,7 +9,7 @@ class Rainbow {
 		
 		if (arr[start] == 1 && arr[end] == 1) {
 			while (start < end) {
-				if (arr[start] == arr[end] && (arr[start+1] == arr[start]+1 && arr[end-1] == arr[end]+1)) {
+				if (arr[start] == arr[end] && arr[start+1] == arr[start]+1 && arr[end-1] == arr[end]+1) {
 					start++; 
 					end--;
 				}
