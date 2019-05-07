@@ -1,0 +1,47 @@
+//If players energy greater than villans strength then it will kill villan.
+
+import java.io.*;
+import java.util.*;
+public class Win {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int testCase = sc.nextInt();
+
+        while (testCase > 0) {
+
+            int n = sc.nextInt();
+            String result = "";
+        
+	        int villans[] = new int[n];
+	        int players[] = new int[n];
+
+	        for (int i = 0; i < n; i++) {
+	            villans[i] = sc.nextInt();
+	        }
+
+
+	        for (int i = 0; i < n; i++) {
+	            players[i] = sc.nextInt();
+	        }
+
+	        Arrays.sort(villans);
+	        Arrays.sort(players);
+
+	        for (int i = 0; i < n; i++) {
+	            if (villans[i] > players[i]) {
+	                result = "LOSE";
+	                break;
+	            }
+	        }
+
+	        if (result.equals("LOSE")) {
+	        	System.out.println("LOSE");
+	        }
+	        else {
+	        	System.out.println("WIN");
+	        }
+
+	        testCase--;
+        }
+   }
+}
