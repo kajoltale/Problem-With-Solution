@@ -1,0 +1,30 @@
+//Java program to check if array is rainbow or not.
+class Rainbow {
+	public static void main(String[] args) {
+
+		int arr[] = {1, 2, 3, 4, 5,6, 7, 6, 5,4, 3, 2, 1, 1};
+		int start = 0;
+		int end = arr.length-1;
+		String result = "";
+		
+		if (arr[start] == 1 && arr[end] == 1) {
+			while (start < end) {
+				if (arr[start] == arr[end] && (arr[start+1] == arr[start]+1 && arr[end-1] == arr[end]+1)) {
+					start++; 
+					end--;
+				}
+				else {
+					System.out.println("No");	
+					System.exit(0);
+				}
+			}
+			
+		} 
+		else {
+			System.out.println("No");	
+			System.exit(0);
+		}	
+
+		System.out.println("Yes");
+	}
+}
