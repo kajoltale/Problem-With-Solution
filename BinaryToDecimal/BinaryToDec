@@ -1,0 +1,31 @@
+import java.util.*;
+class BinaryToDec {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter any number");
+		int num = sc.nextInt();
+
+		printDecimalValue(num);
+	}
+
+	public static void printDecimalValue(int num) {
+
+		int n = 0;
+		double decimal = 0;
+		if (num == 0) {
+			System.out.print("Decimal number = " + decimal);	
+		}
+		else {
+			while (num > 0) {
+				int temp = num % 10;
+				decimal = decimal + temp * Math.pow(2,n);
+				num = num / 10;
+				n++;
+			}
+
+			System.out.print("Decimal number = " + decimal);	
+		}		
+	}
+}
