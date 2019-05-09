@@ -1,0 +1,33 @@
+import java.util.*;
+class DecToBinary1 {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter any number");
+		int n = sc.nextInt();
+
+		printBinaryValue(n);
+	}
+
+	public static void printBinaryValue(int n) {
+
+		if (n == 0) {
+			System.out.print("Binary number = 0");
+		}
+		else {
+			String binary = "";
+			while (n > 0) {
+				binary = binary + (n % 2);
+				n = n / 2;
+			}
+
+			System.out.print("Binary number = ");
+			for (int i = binary.length()-1; i >= 0; i--) {
+				System.out.print(binary.charAt(i));
+			}
+			
+		}
+		
+	}
+}
