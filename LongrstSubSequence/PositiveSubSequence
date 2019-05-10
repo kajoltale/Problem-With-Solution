@@ -1,0 +1,31 @@
+//Java program to print longest sequence of positive integers in an array.
+class PositiveSubSequence {
+	public static void main(String[] args) {
+		
+		int arr[] = {1,2,-3,2,3,4,-6,1,2,3,4,5,-8,4,6,7,8,1,2,3,4,5,6};
+		int n = arr.length;
+
+		int index = 0, length = 0, maxLength = 0, maxIndex = 0;
+
+		for (int i = 0; i < n-1; i++) {
+			if (arr[i]+1 == arr[i+1] && arr[i] > 0 && arr[i+1] > 0) {
+				if (index == 0) {
+					index = i;
+				}
+				length++;
+			}
+			else {
+				index = 0;
+				length = 0;
+			}
+			if (length > maxLength) {
+				maxLength = length;
+				if (index > maxIndex) {
+					maxIndex = index;
+				}
+			}
+		}
+
+		System.out.println("Index: " + maxIndex + " Length: " + (maxLength+1));
+	}
+}
