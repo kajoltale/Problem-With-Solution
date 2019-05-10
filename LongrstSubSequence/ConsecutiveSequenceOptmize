@@ -1,0 +1,30 @@
+//Longest consecutive subsequenec.
+import java.util.*;
+class ConsecutiveSequenceOptmize {
+	public static void main(String[] args) {
+		
+		int arr[]= {9,3,10,4,20,2, 11,5,12,6};
+		int n = arr.length;
+
+		HashSet<Integer> set = new HashSet<Integer>();
+		for (int i = 0; i < n; i++) {
+			set.add(arr[i]);
+		}
+
+		int length = 0, maxLength = 0, result = 0;
+		for (int i = 0; i < n; i++) {
+			int temp = arr[i];
+
+			while (set.contains(temp)) {
+				temp++;
+			}
+
+			if (temp-arr[i] > maxLength) {
+				maxLength = temp-arr[i];
+			}
+			length = 0;
+		}
+
+		System.out.println("Length: " + (maxLength));
+	}
+}
