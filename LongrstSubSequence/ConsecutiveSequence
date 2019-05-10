@@ -1,4 +1,4 @@
-//Java program to print longest consecutive sub sequence.
+//Java program to print longest sequence of positive integers in an array.
 class ConsecutiveSequence {
 	public static void main(String[] args) {
 		
