@@ -19,9 +19,6 @@ class Anagram {
 				set1.add(str1.toLowerCase().charAt(i));
 			}
 
-			System.out.println(set);
-			System.out.println(set1);
-
 			if (set.size() == set1.size()) {
 				for (int i = 0; i < str1.length(); i++) {
 					if (set.contains(str1.toLowerCase().charAt(i))) {
