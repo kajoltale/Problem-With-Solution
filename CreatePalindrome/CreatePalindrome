@@ -1,0 +1,40 @@
+//Minimum insertions to form a palindrome string.
+class CreatePalindrome {
+	public static void main(String[] args) {
+		
+		String str = "abc";
+		int result = 0;
+		int l = 0;
+		int h = str.length() - 1;
+
+		result = getMinInsertion(str, l, h);
+
+		System.out.println("Minimum insertion requires to make string palindrome are " + result + ".");
+	}
+
+	public static int getMinInsertion(String str, int l, int h) {
+
+		if (l > h) {
+			return Integer.MAX_VALUE;
+		}
+		if (l == h) {
+			return 0;
+		}
+		if (l == h-1) {
+			if (str.charAt(l) == str.charAt(h)) {
+				return 0;
+			}
+			else {
+				return 1;
+			}
+		}
+
+		if (str.charAt(l) == str.charAt(h)) {
+			System.out.println("Kajol1");
+			return getMinInsertion(str, l+1, h-1);
+		}
+		else {
+			return Integer.min(getMinInsertion(str, l+1, h), getMinInsertion(str, l, h-1))+1;
+		}
+	}
+}
