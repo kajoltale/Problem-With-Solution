@@ -1,0 +1,23 @@
+//Java program to check if string contain all unique characters or not. 
+import java.util.*;
+class UniqueCharOptimize {
+	public static void main(String[] args) {
+		String str = "kajol";
+		int n = str.length();
+
+		int checker = 0; 
+  
+        for (int i = 0; i < str.length(); i++) { 
+            int bitAtIndex = str.charAt(i) - 'a'; 
+ 
+            if ((checker & (1 << bitAtIndex)) > 0) {
+            	System.out.println(checker);
+            	System.out.println("Not unique");
+            	System.exit(0);
+            }
+  
+            checker = checker | (1 << bitAtIndex); 
+        } 
+  		System.out.println("Unique");
+	}
+}
