@@ -1,0 +1,73 @@
+class LinkedList {
+
+	Node head;
+	static class Node {
+		int data;
+		Node next;
+
+		Node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+
+	public static void main(String[] args) {
+		LinkedList l = new LinkedList();
+
+		l.head = new Node(1);
+		Node second = new Node(2);
+		Node third = new Node(3);
+
+		l.head.next = second;
+		second.next = third;
+
+		l.addAtFront(10);
+		l.addAtEnd(100);
+		l.addAfterNode(second, 11);
+		l.printList();
+	}
+
+	public void printList() {
+		Node n = head;
+		while (n != null) {
+			System.out.print(n.data + " ");
+			n = n.next;
+		}
+	}
+
+	public void addAtFront(int data) {
+		Node addFront = new Node(data);
+		addFront.next = head;
+		head = addFront; 
+		// printList();
+	}
+
+	public void addAtEnd(int data) {
+		Node addEnd = new Node(data);
+		if (head == null) {
+			head = addEnd;
+			return;
+		}
+		Node n = head;
+		while (n.next != null) {
+			n = n.next;
+		}
+		n.next = addEnd;
+		// printList();
+	}
+
+	public void addAfterNode(Node prev, int data) {
+		Node addAfterNode = new Node(data);
+		Node n = head;
+		if (n == null) {
+			head = addAfterNode;
+		}
+		while (n.next != null && n != prev) {
+			n = n.next;
+		}
+		Node temp = n.next;
+		n.next = addAfterNode;
+		addAfterNode.next = temp;
+		// printList();
+	}
+}
