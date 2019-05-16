@@ -1,0 +1,27 @@
+// input string = aabbcccdde, output string = a2b2c3d3e1
+import java.util.*;
+class Compress {
+	public static void main(String[] args) {
+		String str = "aabbbccccdde";
+		int n = str.length();
+
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+
+		for (int i = 0; i < n; i++) {
+			char ch = str.charAt(i);
+			if (map.containsKey(ch)) {
+				map.put(ch, map.get(ch)+1);
+			}
+			else {
+				map.put(ch, 1);
+			}
+		}
+
+		String result = "";
+	    for (Character key : map.keySet()) {
+	    	result = result + key + map.get(key);
+	    }
+
+        System.out.println(result);
+	}
+}
