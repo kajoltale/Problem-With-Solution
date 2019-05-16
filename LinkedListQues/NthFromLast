@@ -41,14 +41,20 @@ class LinkedList {
 		Node n = head;
 		Node m = head;
 		int count = 0;
-		while (count != position) {
-			count++;
-			n = n.next;
+		if (head != null) {
+			while (count != position) {
+				if (n == null) {
+					System.out.println(position + " is greater than node in the list.");
+					return;
+				}
+				count++;
+				n = n.next;
+			}
+			while (n != null) {
+				n = n.next;
+				m = m.next;
+			}
+			System.out.println(m.data);
 		}
-		while (n != null) {
-			n = n.next;
-			m = m.next;
-		}
-		System.out.println(m.data);
 	}
 }
