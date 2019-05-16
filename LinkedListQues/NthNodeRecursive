@@ -1,0 +1,52 @@
+class LinkedList {
+
+	Node head;
+	static class Node {
+		int data;
+		Node next;
+
+		Node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+
+	public static void main(String[] args) {
+		LinkedList l = new LinkedList();
+
+		l.insert(4);
+		l.insert(3);
+		l.insert(2);
+		l.insert(1);
+
+		int count = 0;
+		int result = l.searchNode(l.head, 0, count);
+		System.out.println("Node on given position = " + result);
+		l.printList();
+
+	}
+
+	public void insert(int data) {
+		Node add = new Node(data);
+		add.next = head;
+		head = add;
+	}
+
+	public void printList() {
+		Node n = head;
+		while (n != null) {
+			System.out.print(n.data + " ");
+			n = n.next;
+		}
+	}
+
+	public int searchNode(Node head, int position, int count) {
+		if (count == position) {
+			return head.data;
+		}
+		else {
+			count++;
+			return searchNode(head.next, position, count);
+		}
+	}
+}
